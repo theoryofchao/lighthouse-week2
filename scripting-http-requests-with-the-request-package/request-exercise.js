@@ -1,5 +1,3 @@
-var request = require('request');
-
 // require `request` and the Node `fs` (filesystem) module
 var request = require('request');
 var fs = require('fs');
