@@ -5,4 +5,6 @@ var requestOptions = {
   path: `/http-examples/step5.html`
 };
 
-getHTML(requestOptions);
+getHTML(requestOptions, (responseString) => {
+  console.log(responseString);
+});
