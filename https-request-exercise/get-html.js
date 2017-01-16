@@ -5,7 +5,7 @@ var requestOptions = {
     path: `/http-examples/step2.html`
   };
 
-var getAndPrintHTMLOptions = function (options) {
+var getAndPrintHTML = function (options, callback) {
   https.get(options, (response) => {
     response.setEncoding(`utf8`);
     var responseString = "";
@@ -14,9 +14,13 @@ var getAndPrintHTMLOptions = function (options) {
     });
 
     response.on(`end`, () => {
-      console.log(responseString);
+      callback(responseString);
     });
   });
 };
 
-getAndPrintHTML(requestOptions);
+var printHTML = function(html) {
+  console.log(html);
+};
+
+getAndPrintHTML(requestOptions, printHTML);
